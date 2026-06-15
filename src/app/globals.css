@@ -745,9 +745,7 @@ a {
 }
 
 .timeline-card ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px 20px;
+  display: block;
   margin: 20px 0 0;
   padding: 18px 0 0;
   border-top: 1px solid var(--line);
@@ -756,9 +754,16 @@ a {
 
 .timeline-card li {
   position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 7px;
   padding-left: 12px;
   color: var(--muted);
   font-size: 0.76rem;
+}
+
+.timeline-card li:first-child {
+  margin-top: 0;
 }
 
 .timeline-card li::before {
