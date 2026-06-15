@@ -16,7 +16,7 @@ describe("Home page", () => {
 
     expect(screen.getByRole("link", { name: "View CV" })).toHaveAttribute(
       "href",
-      "/Anna_Kladova_Bohun_CV_06.2026.pdf",
+      "/Anna_Kladova_Bohun_CV_2026.pdf",
     );
     expect(screen.getByRole("link", { name: "Download CV" })).toHaveAttribute("download");
   });

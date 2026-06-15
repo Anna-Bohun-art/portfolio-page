@@ -44,7 +44,7 @@ export const assets: {
   cvUrl: string | null;
 } = {
   portraitUrl: "/anna-bohun-professional.jpg",
-  cvUrl: "/Anna_Kladova_Bohun_CV_06.2026.pdf",
+  cvUrl: "/Anna_Kladova_Bohun_CV_2026.pdf",
 };
 
 export const strengths = [
