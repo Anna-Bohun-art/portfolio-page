@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/header";
 import { PortraitCard } from "@/components/portrait-card";
-import { ProjectShowcase } from "@/components/project-showcase";
 import { SectionReveal } from "@/components/section-reveal";
 import { TechConstellation } from "@/components/tech-constellation";
 import { assets, experience, languages, profile, strengths } from "@/data/content";
@@ -65,8 +64,8 @@ export default function Home() {
               </p>
               <p className="hero-subtitle">{profile.headline}</p>
               <div className="hero-actions">
-                <a className="button button-primary" href="#projects">
-                  Explore my work <ArrowRight className="size-4" />
+                <a className="button button-primary" href="#experience">
+                  View my experience <ArrowRight className="size-4" />
                 </a>
                 <a className="button button-secondary" href={`mailto:${profile.email}`}>
                   Start a conversation
@@ -187,24 +186,6 @@ export default function Home() {
             </SectionReveal>
             <SectionReveal>
               <TechConstellation />
-            </SectionReveal>
-          </div>
-        </section>
-
-        <section className="section projects-section" id="projects" aria-labelledby="projects-title">
-          <div className="site-shell">
-            <SectionReveal className="section-heading split-heading">
-              <div>
-                <span className="eyebrow">Selected work</span>
-                <h2 id="projects-title">Case studies in progress.</h2>
-              </div>
-              <p>
-                These previews outline the areas I&apos;ll document next. They are concept showcases, not
-                claims of shipped client work.
-              </p>
-            </SectionReveal>
-            <SectionReveal>
-              <ProjectShowcase />
             </SectionReveal>
           </div>
         </section>

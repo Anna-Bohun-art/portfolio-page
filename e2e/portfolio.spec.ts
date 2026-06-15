@@ -1,16 +1,13 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-test("navigation, project controls, and theme work", async ({ page }) => {
+test("navigation and theme work", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: /Software for life science/ })).toBeVisible();
   await expect(page.getByRole("button", { name: /Switch to (dark|light) mode/ })).toBeVisible();
 
-  await page.getByRole("link", { name: "Explore my work" }).click();
-  await expect(page.locator("#projects")).toBeInViewport();
-
-  await page.getByRole("button", { name: "Architecture" }).first().click();
-  await expect(page.getByLabel("Illustrative architecture diagram")).toBeVisible();
+  await page.getByRole("link", { name: "View my experience" }).click();
+  await expect(page.locator("#experience")).toBeInViewport();
 
   const themeButton = page.getByRole("button", { name: /Switch to (dark|light) mode/ });
   await themeButton.click();

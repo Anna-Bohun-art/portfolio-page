@@ -22,19 +22,10 @@ export type TechnologyGroup = {
   technologies: Technology[];
 };
 
-export type Project = {
-  title: string;
-  description: string;
-  tags: string[];
-  accent: "cyan" | "violet" | "lime";
-  nodes: string[];
-};
-
 export const navItems: NavItem[] = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Toolkit", href: "#toolkit" },
-  { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -52,7 +43,7 @@ export const assets: {
   portraitUrl: string | null;
   cvUrl: string | null;
 } = {
-  portraitUrl: "/anna-kladova-bohun.jpg",
+  portraitUrl: "/anna-bohun-professional.jpg",
   cvUrl: "/Anna_Kladova_Bohun_CV_06.2026.pdf",
 };
 
@@ -214,33 +205,6 @@ export const scientificKnowledge = [
   {
     name: "Scientific Data Interpretation",
     proof: "Translating complex results into clear conclusions, documentation, and decisions.",
-  },
-];
-
-export const projects: Project[] = [
-  {
-    title: "AI / IoT Dashboard",
-    description:
-      "A future case study exploring real-time device signals, operational status, and AI-assisted insights.",
-    tags: ["React", "TypeScript", "Flask"],
-    accent: "cyan",
-    nodes: ["IoT devices", "Flask API", "Event data", "React UI"],
-  },
-  {
-    title: "Testing-Focused React App",
-    description:
-      "A future case study for a resilient component system backed by layered automated testing.",
-    tags: ["React", "Playwright", "Jest"],
-    accent: "violet",
-    nodes: ["Components", "Unit tests", "E2E tests", "CI pipeline"],
-  },
-  {
-    title: "Scientific Data Explorer",
-    description:
-      "A future case study translating complex scientific data into clear, explorable visual narratives.",
-    tags: ["Data UI", "Python", "Visualization"],
-    accent: "lime",
-    nodes: ["Raw data", "Python", "REST API", "Visual explorer"],
   },
 ];
 
