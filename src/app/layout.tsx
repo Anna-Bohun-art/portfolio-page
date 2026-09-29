@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     "Laboratory Systems",
     "Biochemistry PhD",
     "Python Flask",
-    "AI IoT",
+    "Applied AI",
     "Ulm Germany",
   ],
   authors: [{ name: "Anna Kladova Bohun" }],

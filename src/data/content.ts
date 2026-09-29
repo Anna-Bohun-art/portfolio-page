@@ -11,6 +11,14 @@ export type ExperienceEntry = {
   highlights: string[];
 };
 
+export type Project = {
+  name: string;
+  status: string;
+  summary: string;
+  stack: string[];
+  link?: { label: string; href: string };
+};
+
 export type Technology = {
   name: string;
   proof: string;
@@ -25,6 +33,7 @@ export type TechnologyGroup = {
 export const navItems: NavItem[] = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
   { label: "Toolkit", href: "#toolkit" },
   { label: "Contact", href: "#contact" },
 ];
@@ -36,7 +45,8 @@ export const profile = {
   location: "Dornstadt, Ulm region, Germany",
   email: "annabohun83@gmail.com",
   linkedin: "https://www.linkedin.com/in/annabohun83",
-  bio: "Anna Kladova Bohun is a Software Developer with commercial experience in React, TypeScript, Python/Flask, automated testing, and connected platforms. With a PhD in Biochemistry, she brings scientific domain knowledge and modern software engineering practices to life-science and laboratory-system teams.",
+  github: "https://github.com/Anna-Bohun-art",
+  bio: "Anna Kladova Bohun is a Software Developer with commercial experience in React, TypeScript, Python, automated testing, and AI-powered applications. With a PhD in Biochemistry, she brings scientific domain knowledge and modern software engineering practices to life-science and laboratory-system teams.",
 };
 
 export const assets: {
@@ -60,7 +70,7 @@ export const strengths = [
     title: "Full-Stack Engineering",
     description:
       "Hands-on delivery across React interfaces, typed frontends, Python services, REST APIs, and data layers.",
-    signal: "Frontend to microservices",
+    signal: "Frontend to APIs",
   },
   {
     number: "03",
@@ -73,18 +83,30 @@ export const strengths = [
 
 export const experience: ExperienceEntry[] = [
   {
-    period: "09/2025 - Present",
-    company: "beebucket GmbH",
-    role: "Full-Stack Developer - Applied AI & IoT Platforms",
+    period: "07/2026 - Present",
+    company: "UK Models (client project, remote)",
+    role: "Full-Stack Developer",
     kind: "work",
     highlights: [
-      "Python/Flask microservices and REST APIs",
-      "React and TypeScript frontend development",
-      "Reusable component library development",
-      "Playwright end-to-end testing",
-      "GitHub Actions CI integration",
+      "Analysed a legacy Laravel/PHP lead-management application and designed the target architecture",
+      "Incremental rewrite with Angular, TypeScript, and Spring Boot",
+      "Reuses the existing production MySQL and AWS S3 infrastructure",
+      "AI-assisted, agent-based workflow for legacy code analysis, implementation, and testing",
+    ],
+  },
+  {
+    period: "09/2025 - 07/2026",
+    company: "beebucket GmbH",
+    role: "Software Developer - Applied AI",
+    kind: "work",
+    highlights: [
+      "AI Hub: document manager for files inside data connections, with AI summaries, question answering, and statistical and content metadata",
+      "React and TypeScript frontend: AI summaries and question-answering results in the UI",
+      "Integrated two differently structured REST APIs, with data shaping and lazy loading",
+      "Dynamic display of statistical metadata per document type",
+      "Python service validating the team's Prefect workflows, with statistical analysis of runs",
+      "Playwright end-to-end tests integrated into GitHub Actions CI",
       "AI-assisted delivery with GitHub Copilot and Claude AI",
-      "Agile Scrum collaboration",
     ],
   },
   {
@@ -100,11 +122,14 @@ export const experience: ExperienceEntry[] = [
     ],
   },
   {
-    period: "2024 - 2026",
+    period: "09/2024 - 07/2026",
     company: "IHK",
     role: "Fachinformatikerin für Anwendungsentwicklung",
     kind: "education",
-    highlights: ["Professional training in application development"],
+    highlights: [
+      "Professional training in application development",
+      "Completed 21.07.2026 (IHK Ulm), certificate awarded",
+    ],
   },
   {
     period: "2022 - 2023",
@@ -140,6 +165,24 @@ export const experience: ExperienceEntry[] = [
   },
 ];
 
+export const projects: Project[] = [
+  {
+    name: "UK Models lead-management rewrite",
+    status: "In progress · client project",
+    summary:
+      "Replacing a legacy Laravel/PHP lead-management application with Spring Boot and Angular, built against the existing production database schema.",
+    stack: ["Spring Boot", "Angular", "TypeScript", "MySQL", "AWS S3"],
+  },
+  {
+    name: "authentik OAuth 2.0 project",
+    status: "Completed 09/2026",
+    summary:
+      "End-to-end OAuth 2.0 / OpenID Connect setup with authentik: a browser web client (Authorization Code + PKCE login, server-side sessions, backend-for-frontend) calls a SOAP gateway that validates JWTs against JWKS and enforces scopes; a machine-to-machine client uses client credentials.",
+    stack: ["TypeScript", "Web client (BFF)", "OAuth 2.0 / OIDC", "PKCE", "JWKS", "SOAP / WS-Security", "Docker Compose", "GitHub Actions"],
+    link: { label: "View on GitHub", href: "https://github.com/Anna-Bohun-art/authentik_projekt" },
+  },
+];
+
 export const technologyGroups: TechnologyGroup[] = [
   {
     title: "Frontend",
@@ -157,7 +200,7 @@ export const technologyGroups: TechnologyGroup[] = [
     title: "Backend",
     eyebrow: "Services & data",
     technologies: [
-      { name: "Python / Flask", proof: "Microservices for applied AI and IoT platforms" },
+      { name: "Python / Flask", proof: "Backend services and workflow validation" },
       { name: "REST APIs", proof: "Frontend-to-service integration" },
       { name: "Node / Express", proof: "JavaScript API development" },
       { name: "Java / Spring", proof: "Structured backend application development" },
@@ -184,7 +227,7 @@ export const technologyGroups: TechnologyGroup[] = [
       { name: "GitHub Copilot", proof: "AI-assisted implementation and iteration" },
       { name: "Claude AI", proof: "AI-assisted software delivery" },
       { name: "Contentful", proof: "Structured content management" },
-      { name: "Microservices", proof: "Modular IoT platform architecture" },
+      { name: "LLM / RAG apps", proof: "Frontend for an AI document hub with summaries and Q&A" },
     ],
   },
 ];

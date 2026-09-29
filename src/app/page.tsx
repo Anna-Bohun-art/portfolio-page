@@ -2,6 +2,7 @@ import {
   ArrowDown,
   ArrowRight,
   CheckCircle2,
+  Code2,
   Download,
   ExternalLink,
   FlaskConical,
@@ -14,7 +15,7 @@ import { Header } from "@/components/header";
 import { PortraitCard } from "@/components/portrait-card";
 import { SectionReveal } from "@/components/section-reveal";
 import { TechConstellation } from "@/components/tech-constellation";
-import { assets, experience, languages, profile, strengths } from "@/data/content";
+import { assets, experience, languages, profile, projects, strengths } from "@/data/content";
 
 const strengthIcons = [FlaskConical, Workflow, CheckCircle2];
 const workExperience = experience.filter((entry) => entry.kind === "work");
@@ -33,7 +34,7 @@ export default function Home() {
       addressRegion: "Baden-Württemberg",
       addressCountry: "DE",
     },
-    sameAs: [profile.linkedin],
+    sameAs: [profile.linkedin, profile.github],
     alumniOf: [
       { "@type": "CollegeOrUniversity", name: "Universidade Nova de Lisboa" },
       { "@type": "CollegeOrUniversity", name: "Donetsk National University" },
@@ -125,7 +126,7 @@ export default function Home() {
           <div className="site-shell">
             <SectionReveal className="section-heading">
               <span className="eyebrow">Career journey</span>
-              <h2 id="experience-title">From molecules to microservices.</h2>
+              <h2 id="experience-title">From molecules to software.</h2>
               <p>Professional experience and education, separated for a clearer view of my path.</p>
             </SectionReveal>
 
@@ -172,6 +173,33 @@ export default function Home() {
                     ))}
                   </div>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section section-light" id="projects" aria-labelledby="projects-title">
+          <div className="site-shell">
+            <SectionReveal className="section-heading">
+              <span className="eyebrow">Selected work</span>
+              <h2 id="projects-title">Projects.</h2>
+              <p>Current and recent builds beyond my employed roles.</p>
+            </SectionReveal>
+            <div className="project-grid">
+              {projects.map((project, index) => (
+                <SectionReveal className="project-card" delay={index * 0.08} key={project.name}>
+                  <div className="project-status">{project.status}</div>
+                  <h3>{project.name}</h3>
+                  <p>{project.summary}</p>
+                  <ul className="project-stack">
+                    {project.stack.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
+                  {project.link ? (
+                    <a className="project-link" href={project.link.href} target="_blank" rel="noreferrer">
+                      {project.link.label} <ExternalLink className="size-3.5" />
+                    </a>
+                  ) : null}
+                </SectionReveal>
               ))}
             </div>
           </div>
@@ -233,6 +261,10 @@ export default function Home() {
               <a href={profile.linkedin} target="_blank" rel="noreferrer">
                 <span><Link2 className="size-4" /> LinkedIn</span>
                 /in/annabohun83 <ExternalLink className="size-3.5" />
+              </a>
+              <a href={profile.github} target="_blank" rel="noreferrer">
+                <span><Code2 className="size-4" /> GitHub</span>
+                /Anna-Bohun-art <ExternalLink className="size-3.5" />
               </a>
               <div>
                 <span><MapPin className="size-4" /> Location</span>
