@@ -1,5 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { content } from "@/data/content";
 import { ThemeToggle } from "./theme-toggle";
 
 describe("ThemeToggle", () => {
@@ -10,7 +11,7 @@ describe("ThemeToggle", () => {
 
   it("toggles and persists the selected theme", async () => {
     const user = userEvent.setup();
-    render(<ThemeToggle />);
+    render(<ThemeToggle labels={content.en.header.theme} />);
     const button = await screen.findByRole("button", { name: "Switch to dark mode" });
 
     await user.click(button);

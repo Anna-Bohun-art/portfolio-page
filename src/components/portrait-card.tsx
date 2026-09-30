@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export function PortraitCard({ portraitUrl }: { portraitUrl?: string | null }) {
+export function PortraitCard({ portraitUrl, caption }: { portraitUrl?: string | null; caption: string }) {
   if (!portraitUrl) {
     return null;
   }
@@ -19,7 +19,7 @@ export function PortraitCard({ portraitUrl }: { portraitUrl?: string | null }) {
       </div>
       <div className="portrait-details">
         <strong>Anna Kladova Bohun</strong>
-        <span>Software Developer · React / TypeScript · Life Science</span>
+        <span>{caption}</span>
       </div>
     </div>
   );

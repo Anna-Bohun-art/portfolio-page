@@ -179,6 +179,14 @@ a {
   transform: translateY(-1px);
 }
 
+.language-switch {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+}
+
 .mobile-nav {
   position: absolute;
   top: 100%;

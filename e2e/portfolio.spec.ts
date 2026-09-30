@@ -15,15 +15,28 @@ test("navigation and theme work", async ({ page }) => {
   expect(savedTheme).toMatch(/dark|light/);
 });
 
-test("has no serious accessibility issues or horizontal overflow", async ({ page }) => {
+for (const path of ["/", "/de"]) {
+  test(`${path} has no serious accessibility issues or horizontal overflow`, async ({ page }) => {
+    await page.goto(path);
+    await page.waitForLoadState("networkidle");
+
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+    expect(overflow).toBeLessThanOrEqual(1);
+
+    const results = await new AxeBuilder({ page }).disableRules(["color-contrast"]).analyze();
+    expect(results.violations).toEqual([]);
+  });
+}
+
+test("switches between English and German", async ({ page }) => {
   await page.goto("/");
-  await page.waitForLoadState("networkidle");
+  await page.getByRole("link", { name: "Auf Deutsch wechseln" }).click();
+  await expect(page).toHaveURL(/\/de$/);
+  await expect(page.locator("html")).toHaveAttribute("lang", "de");
+  await expect(page.getByRole("heading", { name: /Software für/ })).toBeVisible();
 
-  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
-  expect(overflow).toBeLessThanOrEqual(1);
-
-  const results = await new AxeBuilder({ page }).disableRules(["color-contrast"]).analyze();
-  expect(results.violations).toEqual([]);
+  await page.getByRole("link", { name: "Switch to English" }).click();
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
 });
 
 test("respects reduced motion", async ({ page }) => {
