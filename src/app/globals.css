@@ -620,6 +620,20 @@ a {
   background: var(--surface);
 }
 
+.project-image-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin: -34px -34px 24px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.project-image {
+  object-fit: cover;
+  object-position: top center;
+}
+
 .project-status {
   color: var(--cyan);
   font-family: var(--font-geist-mono), monospace;

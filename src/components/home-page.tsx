@@ -11,6 +11,7 @@ import {
   MapPin,
   Workflow,
 } from "lucide-react";
+import Image from "next/image";
 import { Header } from "@/components/header";
 import { PortraitCard } from "@/components/portrait-card";
 import { SectionReveal } from "@/components/section-reveal";
@@ -177,6 +178,17 @@ export function HomePage({ locale }: { locale: Locale }) {
             <div className="project-grid">
               {t.projects.map((project, index) => (
                 <SectionReveal className="project-card" delay={index * 0.08} key={project.name}>
+                  {project.image ? (
+                    <div className="project-image-frame">
+                      <Image
+                        className="project-image"
+                        src={project.image.src}
+                        alt={project.image.alt}
+                        fill
+                        sizes="(max-width: 760px) calc(100vw - 28px), 560px"
+                      />
+                    </div>
+                  ) : null}
                   <div className="project-status">{project.status}</div>
                   <h3>{project.name}</h3>
                   <p>{project.summary}</p>

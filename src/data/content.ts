@@ -22,6 +22,7 @@ export type Project = {
   status: string;
   summary: string;
   stack: string[];
+  image?: { src: string; alt: string };
   link?: { label: string; href: string };
 };
 
@@ -82,17 +83,7 @@ export const assets: {
   cvUrl: "/Anna_Kladova_Bohun_CV_2026.pdf",
 };
 
-const authentikRepo = "https://github.com/Anna-Bohun-art/authentik_projekt";
-const authentikStack = [
-  "TypeScript",
-  "Web client (BFF)",
-  "OAuth 2.0 / OIDC",
-  "PKCE",
-  "JWKS",
-  "SOAP / WS-Security",
-  "Docker Compose",
-  "GitHub Actions",
-];
+const thermofitRepo = "https://github.com/Anna-Bohun-art/thermofit";
 
 const en = {
   meta: {
@@ -277,12 +268,13 @@ const en = {
       stack: ["Spring Boot", "Angular", "TypeScript", "MySQL", "AWS S3"],
     },
     {
-      name: "authentik OAuth 2.0 project",
-      status: "Completed 09/2026",
+      name: "ThermoFit: DSC curve fitting for protein stability",
+      status: "Completed 11/2026 · personal project",
       summary:
-        "End-to-end OAuth 2.0 / OpenID Connect setup with authentik: a browser web client (Authorization Code + PKCE login, server-side sessions, backend-for-frontend) calls a SOAP gateway that validates JWTs against JWKS and enforces scopes; a machine-to-machine client uses client credentials.",
-      stack: authentikStack,
-      link: { label: "View on GitHub", href: authentikRepo },
+        "Web tool that fits DSC thermograms (reversible two-state and irreversible models, including a global multi-scan-rate fit) and reports parameters with 95% confidence intervals. Validated against my own published adenylate-kinase data: Tm 45.33 vs 45.3 °C, global fit T* 43.08 vs 43.1 °C, 9/9 derived values of the paper's Table 3. Input is digitized from the published figures, not raw instrument files.",
+      stack: ["Python", "FastAPI", "SciPy", "React", "TypeScript", "Playwright", "GitHub Actions", "Docker"],
+      image: { src: "/thermofit-preview.png", alt: "ThermoFit: irreversible fit of a DSC thermogram with residuals and a plain-language summary" },
+      link: { label: "View on GitHub", href: thermofitRepo },
     },
   ] as Project[],
   toolkitSection: {
@@ -572,12 +564,13 @@ const de: SiteContent = {
       stack: ["Spring Boot", "Angular", "TypeScript", "MySQL", "AWS S3"],
     },
     {
-      name: "authentik-OAuth-2.0-Projekt",
-      status: "Abgeschlossen 09/2026",
+      name: "ThermoFit: DSC-Kurvenanpassung für Proteinstabilität",
+      status: "Abgeschlossen 11/2026 · Eigenprojekt",
       summary:
-        "Durchgängiges OAuth-2.0-/OpenID-Connect-Setup mit authentik: Ein Browser-Webclient (Login per Authorization Code + PKCE, serverseitige Sessions, Backend-for-Frontend) ruft ein SOAP-Gateway auf, das JWTs gegen JWKS prüft und Scopes durchsetzt; ein Machine-to-Machine-Client nutzt Client Credentials.",
-      stack: authentikStack,
-      link: { label: "Auf GitHub ansehen", href: authentikRepo },
+        "Web-Tool, das DSC-Thermogramme anpasst (reversibles Zwei-Zustands-Modell und irreversible Modelle, inklusive globalem Fit über mehrere Heizraten) und Parameter mit 95-%-Konfidenzintervallen ausgibt. Validiert an meinen eigenen veröffentlichten Adenylatkinase-Daten: Tm 45,33 vs. 45,3 °C, globaler Fit T* 43,08 vs. 43,1 °C, 9/9 abgeleitete Werte aus Tabelle 3 der Veröffentlichung. Eingabe sind digitalisierte Abbildungen, keine Rohdaten des Geräts.",
+      stack: ["Python", "FastAPI", "SciPy", "React", "TypeScript", "Playwright", "GitHub Actions", "Docker"],
+      image: { src: "/thermofit-preview.png", alt: "ThermoFit: irreversible Anpassung eines DSC-Thermogramms mit Residuen und verständlicher Zusammenfassung" },
+      link: { label: "Auf GitHub ansehen", href: thermofitRepo },
     },
   ],
   toolkitSection: {
