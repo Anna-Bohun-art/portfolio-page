@@ -24,6 +24,7 @@ export type Project = {
   stack: string[];
   image?: { src: string; alt: string };
   link?: { label: string; href: string };
+  secondaryLink?: { label: string; href: string };
 };
 
 export type Technology = {
@@ -80,6 +81,7 @@ export const assets: { portraitUrl: string | null } = {
 };
 
 const thermofitRepo = "https://github.com/Anna-Bohun-art/thermofit";
+const thermofitLive = "https://thermofit-nu.vercel.app/";
 
 const en = {
   meta: {
@@ -270,7 +272,8 @@ const en = {
         "Web tool that fits DSC thermograms (reversible two-state and irreversible models, including a global multi-scan-rate fit) and reports parameters with 95% confidence intervals. Validated against my own published adenylate-kinase data: Tm 45.33 vs 45.3 °C, global fit T* 43.08 vs 43.1 °C, 9/9 derived values of the paper's Table 3. Input is digitized from the published figures, not raw instrument files.",
       stack: ["Python", "FastAPI", "SciPy", "React", "TypeScript", "Playwright", "GitHub Actions", "Docker"],
       image: { src: "/thermofit-preview.png", alt: "ThermoFit: irreversible fit of a DSC thermogram with residuals and a plain-language summary" },
-      link: { label: "View on GitHub", href: thermofitRepo },
+      link: { label: "Open live demo", href: thermofitLive },
+      secondaryLink: { label: "View on GitHub", href: thermofitRepo },
     },
   ] as Project[],
   toolkitSection: {
@@ -562,7 +565,8 @@ const de: SiteContent = {
         "Web-Tool, das DSC-Thermogramme anpasst (reversibles Zwei-Zustands-Modell und irreversible Modelle, inklusive globalem Fit über mehrere Heizraten) und Parameter mit 95-%-Konfidenzintervallen ausgibt. Validiert an meinen eigenen veröffentlichten Adenylatkinase-Daten: Tm 45,33 vs. 45,3 °C, globaler Fit T* 43,08 vs. 43,1 °C, 9/9 abgeleitete Werte aus Tabelle 3 der Veröffentlichung. Eingabe sind digitalisierte Abbildungen, keine Rohdaten des Geräts.",
       stack: ["Python", "FastAPI", "SciPy", "React", "TypeScript", "Playwright", "GitHub Actions", "Docker"],
       image: { src: "/thermofit-preview.png", alt: "ThermoFit: irreversible Anpassung eines DSC-Thermogramms mit Residuen und verständlicher Zusammenfassung" },
-      link: { label: "Auf GitHub ansehen", href: thermofitRepo },
+      link: { label: "Live-Demo öffnen", href: thermofitLive },
+      secondaryLink: { label: "Auf GitHub ansehen", href: thermofitRepo },
     },
   ],
   toolkitSection: {

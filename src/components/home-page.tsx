@@ -195,9 +195,16 @@ export function HomePage({ locale }: { locale: Locale }) {
                     {project.stack.map((item) => <li key={item}>{item}</li>)}
                   </ul>
                   {project.link ? (
-                    <a className="project-link" href={project.link.href} target="_blank" rel="noreferrer">
-                      {project.link.label} <ExternalLink className="size-3.5" />
-                    </a>
+                    <div className="project-links">
+                      <a className="project-link" href={project.link.href} target="_blank" rel="noreferrer">
+                        {project.link.label} <ExternalLink className="size-3.5" />
+                      </a>
+                      {project.secondaryLink ? (
+                        <a className="project-link" href={project.secondaryLink.href} target="_blank" rel="noreferrer">
+                          {project.secondaryLink.label} <ExternalLink className="size-3.5" />
+                        </a>
+                      ) : null}
+                    </div>
                   ) : null}
                 </SectionReveal>
               ))}
