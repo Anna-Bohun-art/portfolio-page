@@ -3,7 +3,6 @@ import {
   ArrowRight,
   CheckCircle2,
   Code2,
-  Download,
   ExternalLink,
   FlaskConical,
   Link2,
@@ -234,25 +233,6 @@ export function HomePage({ locale }: { locale: Locale }) {
                 <a className="button button-primary" href={`mailto:${profile.email}`}>
                   <Mail className="size-4" /> {t.contact.emailAction}
                 </a>
-                {assets.cvUrl ? (
-                  <>
-                    <a
-                      className="button button-secondary"
-                      href={assets.cvUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <ExternalLink className="size-4" /> {t.contact.viewCv}
-                    </a>
-                    <a className="button button-secondary" href={assets.cvUrl} download>
-                      <Download className="size-4" /> {t.contact.downloadCv}
-                    </a>
-                  </>
-                ) : (
-                  <button className="button button-disabled" type="button" disabled title={t.contact.cvComingSoonTitle}>
-                    <Download className="size-4" /> {t.contact.cvComingSoon}
-                  </button>
-                )}
               </div>
             </SectionReveal>
             <SectionReveal className="contact-details">

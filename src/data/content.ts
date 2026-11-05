@@ -75,12 +75,8 @@ export const profile = {
   github: "https://github.com/Anna-Bohun-art",
 };
 
-export const assets: {
-  portraitUrl: string | null;
-  cvUrl: string | null;
-} = {
+export const assets: { portraitUrl: string | null } = {
   portraitUrl: "/anna-bohun-professional.jpg",
-  cvUrl: "/Anna_Kladova_Bohun_CV_2026.pdf",
 };
 
 const thermofitRepo = "https://github.com/Anna-Bohun-art/thermofit";
@@ -363,10 +359,6 @@ const en = {
     titleBottom: "Let's make it clear.",
     text: "I'm especially interested in software roles within life-science companies, laboratory systems, scientific platforms, and related digital products.",
     emailAction: "Email Anna",
-    viewCv: "View CV (German)",
-    downloadCv: "Download CV (German)",
-    cvComingSoon: "CV coming soon",
-    cvComingSoonTitle: "CV PDF coming soon",
     emailLabel: "Email",
     locationLabel: "Location",
     languagesLabel: "Languages",
@@ -659,10 +651,6 @@ const de: SiteContent = {
     titleBottom: "Machen wir es klar.",
     text: "Besonders interessieren mich Softwarerollen in Life-Science-Unternehmen, Laborsystemen, wissenschaftlichen Plattformen und verwandten digitalen Produkten.",
     emailAction: "E-Mail an Anna",
-    viewCv: "Lebenslauf ansehen",
-    downloadCv: "Lebenslauf herunterladen",
-    cvComingSoon: "Lebenslauf folgt",
-    cvComingSoonTitle: "Lebenslauf als PDF folgt",
     emailLabel: "E-Mail",
     locationLabel: "Standort",
     languagesLabel: "Sprachen",

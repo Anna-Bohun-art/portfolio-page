@@ -11,16 +11,6 @@ describe("HomePage", () => {
     expect(screen.getByRole("heading", { name: "Education" })).toBeInTheDocument();
   });
 
-  it("offers the CV for viewing and download", () => {
-    render(<HomePage locale="en" />);
-
-    expect(screen.getByRole("link", { name: "View CV (German)" })).toHaveAttribute(
-      "href",
-      "/Anna_Kladova_Bohun_CV_2026.pdf",
-    );
-    expect(screen.getByRole("link", { name: "Download CV (German)" })).toHaveAttribute("download");
-  });
-
   it("links each language version to the other", () => {
     const { unmount } = render(<HomePage locale="en" />);
     expect(screen.getByRole("link", { name: "Auf Deutsch wechseln" })).toHaveAttribute("href", "/de");

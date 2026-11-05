@@ -32,7 +32,6 @@ npx playwright install chromium
 Career content, links, project placeholders, and asset availability are centralized in `src/data/content.ts`.
 
 - Add Anna's portrait under `public/`, then set `assets.portraitUrl`.
-- Add the CV PDF under `public/`, then set `assets.cvUrl`.
 - Set `NEXT_PUBLIC_SITE_URL` to the production origin for canonical, sitemap, and social metadata.
 
 ## Deploy
